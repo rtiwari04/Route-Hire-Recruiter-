@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operator Registration | RouteHire</title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/forms.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
+
   <nav class="navbar">
     <div class="container">
-      <a href="../index.html" class="nav-brand">
+      <a href="index.html" class="nav-brand">
         <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
       </a>
-      <a href="../login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
     </div>
   </nav>
 
@@ -23,38 +25,40 @@
     <div class="card" style="padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
       <div style="text-align: center; margin-bottom: 2rem;">
         <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Travel Operator Registration</h2>
-        <p style="color: var(--text-muted);">Create an account to find drivers and post recruitment requirements.</p>
+        <p style="color: var(--text-muted);">Access over 10,000+ verified commercial bus and sleeper coach drivers across India.</p>
       </div>
 
-      <form id="operatorRegisterForm">
+      <form id="operatorRegisterForm" onsubmit="event.preventDefault(); openModal('opSuccessModal');">
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label required" for="opCompanyName">Travel Company Name</label>
-            <input type="text" id="opCompanyName" class="form-control" placeholder="e.g. Apex Intercity Express" required>
+            <label class="form-label required">Travel Company Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Apex Intercity Express" required>
           </div>
           <div class="form-group">
-            <label class="form-label required" for="opContactPerson">Contact Person Name</label>
-            <input type="text" id="opContactPerson" class="form-control" placeholder="e.g. Vikram Malhotra" required>
+            <label class="form-label required">Contact Person Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Vikram Malhotra" required>
           </div>
         </div>
+
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label required" for="opPhone">Mobile Number</label>
-            <input type="tel" id="opPhone" class="form-control" placeholder="10-digit official mobile" required>
+            <label class="form-label required">Mobile Number</label>
+            <input type="tel" class="form-control" placeholder="10-digit Official Mobile" required>
           </div>
           <div class="form-group">
-            <label class="form-label required" for="opEmail">Official Email</label>
-            <input type="email" id="opEmail" class="form-control" placeholder="contact@example.com" required>
+            <label class="form-label required">Official Email</label>
+            <input type="email" class="form-control" placeholder="contact@apexexpress.com" required>
           </div>
         </div>
+
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="opCity">Primary Operating Base / City</label>
-            <input type="text" id="opCity" class="form-control" placeholder="e.g. Nagpur / Pune / Mumbai">
+            <label class="form-label">GST Number</label>
+            <input type="text" class="form-control" placeholder="27AAACA1234B1Z9">
           </div>
           <div class="form-group">
-            <label class="form-label">Fleet Size</label>
-            <select class="form-control">
+            <label class="form-label required">Fleet Size</label>
+            <select class="form-control" required>
               <option value="1-10">1 - 10 Buses</option>
               <option value="11-50" selected>11 - 50 Buses</option>
               <option value="51-100">51 - 100 Buses</option>
@@ -62,6 +66,12 @@
             </select>
           </div>
         </div>
+
+        <div class="form-group">
+          <label class="form-label">Primary Operating Base / City</label>
+          <input type="text" class="form-control" placeholder="e.g. Nagpur / Pune / Mumbai">
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
           <i class="fa-solid fa-building-circle-check"></i> Create Operator Account
         </button>
@@ -69,16 +79,20 @@
     </div>
   </div>
 
+  <!-- Modal -->
   <div id="opSuccessModal" class="modal-overlay">
     <div class="modal-card" style="text-align: center;">
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.25rem auto;">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
       <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Operator Account Ready!</h3>
-      <p style="color: var(--text-muted); margin-bottom: 1.8rem;">You can now search drivers and post recruitment requirements.</p>
-      <a href="oprator-dashboard.html" class="btn btn-primary btn-block">Go to Operator Dashboard</a>
+      <p style="color: var(--text-muted); margin-bottom: 1.8rem;">You can now search drivers by route and post recruitment requirements.</p>
+      <a href="operator-dashboard.html" class="btn btn-primary btn-block">Go to Operator Dashboard</a>
     </div>
   </div>
 
   <script src="../js/api.js"></script>
   <script src="../js/app.js"></script>
-  <script src="../js/oprator.js"></script>
+  <script src="../../../../../Frontend/HTML/public/opratorpage/js/operator.js"></script>
 </body>
 </html>
