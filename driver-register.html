@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Registration | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+      <div style="display: flex; gap: 1rem;">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 900px; margin: 3rem auto;">
+    <div class="card" style="padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+      
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Driver Profile Registration</h2>
+        <p style="color: var(--text-muted);">Showcase your route experience and get discovered by top travel operators.</p>
+      </div>
+
+      <!-- Multi-step Progress Header -->
+      <div class="wizard-steps">
+        <div class="wizard-progress-bar" style="width: 0%;"></div>
+
+        <div class="step-item active">
+          <div class="step-circle">01</div>
+          <span class="step-title">Personal</span>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">02</div>
+          <span class="step-title">Driving</span>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">03</div>
+          <span class="step-title">Experience</span>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">04</div>
+          <span class="step-title">Routes</span>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">05</div>
+          <span class="step-title">Documents</span>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">06</div>
+          <span class="step-title">Complete</span>
+        </div>
+      </div>
+
+      <!-- Wizard Form -->
+      <form id="driverRegisterForm">
+        
+        <!-- STEP 01: PERSONAL -->
+        <div id="step-1" class="wizard-step-content">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; font-size: 1.25rem;">
+            <i class="fa-solid fa-user" style="color: var(--accent);"></i> Personal Details
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">Full Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Rajesh Kumar" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label required">Father's Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Rameshwar Kumar" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">Date of Birth</label>
+              <input type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label required">Gender</label>
+              <select class="form-control" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">Mobile Number</label>
+              <input type="tel" class="form-control" placeholder="10-digit Mobile Number" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="rajesh@gmail.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">City</label>
+              <input type="text" class="form-control" placeholder="e.g. Nagpur" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label required">State</label>
+              <input type="text" class="form-control" placeholder="e.g. Maharashtra" required>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+            <button type="button" class="btn btn-primary btn-next-step">Next: Driving Details <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 02: DRIVING -->
+        <div id="step-2" class="wizard-step-content" style="display: none;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; font-size: 1.25rem;">
+            <i class="fa-solid fa-id-card" style="color: var(--accent);"></i> Driving Licence &amp; Vehicle Experience
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">Licence Number</label>
+              <input type="text" class="form-control" placeholder="MH-31-2012-0088921" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Badge Number</label>
+              <input type="text" class="form-control" placeholder="BDG-9921">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label required">Vehicle Familiarity &amp; Mastery</label>
+            <div class="checkbox-group">
+              <div class="checkbox-pill">
+                <input type="checkbox" id="v_volvo" checked>
+                <label for="v_volvo">Volvo 9400 B11R</label>
+              </div>
+              <div class="checkbox-pill">
+                <input type="checkbox" id="v_scania" checked>
+                <label for="v_scania">Scania Metrolink</label>
+              </div>
+              <div class="checkbox-pill">
+                <input type="checkbox" id="v_benz" checked>
+                <label for="v_benz">BharatBenz AC Sleeper</label>
+              </div>
+              <div class="checkbox-pill">
+                <input type="checkbox" id="v_leyland">
+                <label for="v_leyland">Ashok Leyland</label>
+              </div>
+              <div class="checkbox-pill">
+                <input type="checkbox" id="v_mini">
+                <label for="v_mini">Mini Bus</label>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-outline btn-prev-step"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <button type="button" class="btn btn-primary btn-next-step">Next: Experience <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 03: EXPERIENCE -->
+        <div id="step-3" class="wizard-step-content" style="display: none;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; font-size: 1.25rem;">
+            <i class="fa-solid fa-briefcase" style="color: var(--accent);"></i> Overall Work Experience
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required">Total Driving Experience (Years)</label>
+              <input type="number" class="form-control" min="1" max="40" value="8" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Expected Monthly Salary (₹)</label>
+              <input type="text" class="form-control" placeholder="e.g. ₹38,000 / month">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Previous Travel Company</label>
+              <input type="text" class="form-control" placeholder="e.g. Neeta Travels">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Position Held</label>
+              <input type="text" class="form-control" placeholder="e.g. Senior Volvo Captain">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-outline btn-prev-step"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <button type="button" class="btn btn-primary btn-next-step">Next: Routes <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 04: ROUTES -->
+        <div id="step-4" class="wizard-step-content" style="display: none;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; font-size: 1.25rem;">
+            <i class="fa-solid fa-route" style="color: var(--accent);"></i> Route Knowledge &amp; Trips
+          </h3>
+
+          <div id="routesContainer">
+            <div class="route-row">
+              <input type="text" class="form-control" value="Nagpur" placeholder="Origin" required>
+              <input type="text" class="form-control" value="Hyderabad" placeholder="Destination" required>
+              <input type="number" class="form-control" value="6" placeholder="Years" required>
+              <input type="number" class="form-control" value="450" placeholder="Trips" required>
+              <div></div>
+            </div>
+          </div>
+
+          <button type="button" id="btnAddRoute" class="btn btn-outline-primary btn-sm" style="margin-top: 0.5rem;">
+            <i class="fa-solid fa-plus"></i> Add Another Route
+          </button>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-outline btn-prev-step"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <button type="button" class="btn btn-primary btn-next-step">Next: Documents <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 05: DOCUMENTS -->
+        <div id="step-5" class="wizard-step-content" style="display: none;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; font-size: 1.25rem;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Document Upload Previews
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div class="upload-zone">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <div class="upload-title">Driving Licence Front &amp; Back</div>
+              <div class="upload-hint">PNG, JPG or PDF up to 5MB</div>
+            </div>
+
+            <div class="upload-zone">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <div class="upload-title">Aadhaar Card Verification</div>
+              <div class="upload-hint">Sensitive numbers masked automatically</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-outline btn-prev-step"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <button type="button" class="btn btn-primary btn-next-step">Next: Review &amp; Submit <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 06: COMPLETE -->
+        <div id="step-6" class="wizard-step-content" style="display: none;">
+          <div style="text-align: center; padding: 2rem 0;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.5rem auto;">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">All Set! Ready to Publish Profile</h3>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 2rem auto;">By clicking Submit, your profile will become visible to travel operators searching for your exact route expertise.</p>
+            
+            <button type="submit" class="btn btn-success btn-lg"><i class="fa-solid fa-rocket"></i> Create Driver Profile Now</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-card" style="text-align: center;">
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.25rem auto;">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Registration Successful!</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1.8rem;">Your profile has been created and verified for demo usage.</p>
+      <a href="driver-dashboard.html" class="btn btn-primary btn-block">Go to Driver Dashboard</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="../../../../../../js/forms.js"></script>
+</body>
+</html>

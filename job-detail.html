@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Requirement Details | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="find-jobs.html" class="nav-link">Find Jobs</a></li>
+        <li><a href="driver-dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="find-jobs.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-arrow-left"></i> Back to Jobs</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 950px; margin: 3rem auto;">
+    
+    <!-- Top Requirement Header Card -->
+    <div class="card" style="padding: 2.5rem; margin-bottom: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border-top: 6px solid var(--accent);">
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;">
+        
+        <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+          <img id="jobOperatorLogo" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=150&q=80" alt="Operator Logo" class="avatar-img" style="width: 80px; height: 80px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+              <h1 id="jobTitle" style="font-size: 2.2rem; color: var(--text-dark);">Professional Bus Driver</h1>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 1.05rem; font-weight: 600; color: var(--primary);">
+              <span id="jobOperatorName">Laxmi Holidays Travels</span>
+              <span class="badge badge-verified"><i class="fa-solid fa-circle-check"></i> Verified Operator</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
+          <span id="jobMatchScore" class="badge badge-verified" style="font-size: 0.95rem; padding: 0.6rem 1.2rem;"><i class="fa-solid fa-bolt"></i> 96% RouteHire Match</span>
+          <button class="btn btn-success btn-lg" onclick="openApplyModal()"><i class="fa-solid fa-paper-plane"></i> 🟢 APPLY NOW</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Job Key Specifications Grid -->
+    <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Key Job Overview</h3>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        <div>
+   <div>
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+    LOCATION
+  </span>
+  <strong id="jobLocation" style="font-size: 1.05rem; color: var(--text-dark);">
+    <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i>
+    Nagpur, Maharashtra
+  </strong>
+</div>
+
+<div>
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+    SALARY / CTC
+  </span>
+  <strong id="jobSalary" style="font-size: 1.1rem; color: var(--success);">
+    ₹30,000 – ₹35,000 / Month
+  </strong>
+</div>
+
+<div>
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+    EXPERIENCE REQUIRED
+  </span>
+  <strong id="jobExp" style="font-size: 1.05rem;">
+    3+ Years
+  </strong>
+</div>
+
+<div>
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+    VACANCIES / JOINING
+  </span>
+  <strong id="jobVacancies" style="font-size: 1.05rem; color: var(--accent);">
+    10 Drivers (Immediate)
+  </strong>
+</div>
+
+</div>
+
+<div style="margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.25rem;">
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.5rem;">
+    ASSIGNED ROUTES
+  </span>
+
+  <div id="jobRoutes" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+</div>
+
+<div style="margin-top: 1.25rem;">
+  <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.5rem;">
+    VEHICLE TYPES REQUIRED
+  </span>     <div id="jobVehicles" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+      </div>
+    </div>
+
+    <!-- Detailed Requirements Section -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+      
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        
+        <!-- Role Description -->
+        <div class="card" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem;"><i class="fa-solid fa-user-gear" style="color: var(--accent);"></i> Role Summary</h3>
+          <p id="jobDescription" style="color: var(--text-main); font-size: 1rem; line-height: 1.7;"></p>
+        </div>
+
+        <!-- Key Responsibilities -->
+        <div class="card" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem;"><i class="fa-solid fa-list-check" style="color: var(--accent);"></i> Key Responsibilities</h3>
+          <ul id="jobResponsibilities" style="list-style: none;"></ul>
+        </div>
+
+        <!-- Job Requirements -->
+        <div class="card" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem;"><i class="fa-solid fa-clipboard-check" style="color: var(--secondary);"></i> Candidate Requirements</h3>
+          <ul id="jobRequirements" style="list-style: none;"></ul>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Benefits & Apply Banner -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        
+        <!-- Benefits Card -->
+        <div class="card" style="padding: 2rem;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1.25rem;"><i class="fa-solid fa-gift" style="color: var(--success);"></i> Job Benefits Provided</h3>
+          <div id="jobBenefits" style="display: flex; flex-direction: column; gap: 0.8rem;"></div>
+        </div>
+
+        <!-- Large Apply Box -->
+        <div class="card" style="padding: 2rem; text-align: center; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #FFFFFF;">
+          <h3 style="color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Interested in this role?</h3>
+          <p style="color: #CBD5E1; font-size: 0.9rem; margin-bottom: 1.5rem;">Apply directly via RouteHire recruitment portal.</p>
+          <button class="btn btn-success btn-block btn-lg" onclick="openApplyModal()"><i class="fa-solid fa-paper-plane"></i> 🟢 APPLY NOW</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Apply Confirmation Modal -->
+  <div id="applyConfirmationModal" class="modal-overlay">
+    <div class="modal-card" style="text-align: center;">
+      <button class="modal-close" onclick="closeModal('applyConfirmationModal')"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.25rem auto;">
+        <i class="fa-solid fa-file-signature"></i>
+      </div>
+
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Apply for this Opportunity?</h3>
+      <p style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.2rem;">Laxmi Holidays Travels</p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.8rem;">Professional Bus Driver • Nagpur, Maharashtra</p>
+
+      <div style="display: flex; gap: 1rem;">
+        <button class="btn btn-outline btn-block" onclick="closeModal('applyConfirmationModal')">Cancel</button>
+        <button class="btn btn-primary btn-block btn-lg" onclick="handleContinueApplication()"><i class="fa-solid fa-arrow-up-right-from-square"></i> Continue Application</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../../../../js/jobs.js"></script>
+</body>
+</html>

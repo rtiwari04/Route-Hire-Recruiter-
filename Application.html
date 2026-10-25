@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Applications | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="../driver-dashboard.html" class="btn btn-primary">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 950px; margin: 3rem auto;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <div>
+        <h1 style="font-size: 2rem;">My Job Applications</h1>
+        <p style="color: var(--text-muted);">Track screening, shortlisting, and selection statuses of your submitted applications.</p>
+      </div>
+      <a href="../find-jobs.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-plus"></i> Apply to More Jobs</a>
+    </div>
+
+    <!-- Application List Container -->
+    <div id="driverAppsList">
+      <!-- JS populated -->
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/application.js"></script>
+</body>
+</html>

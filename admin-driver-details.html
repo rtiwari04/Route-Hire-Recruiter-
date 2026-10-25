@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Driver Audit & Verification | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../../../../../../../../../../../css/style.css">
+  <link rel="stylesheet" href="../../../../../../../../../../../../css/dashboard.css">
+  <link rel="stylesheet" href="../../../../../../../../../../../../../css/forms.css">
+  <link rel="stylesheet" href="../../../../../../../../../../../../css/admin.css">
+  <link rel="stylesheet" href="../../../../../../../../../../../../css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span> <span class="badge badge-info" style="font-size:0.7rem;">ADMIN PANEL</span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="admin-drivers.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-arrow-left"></i> Back to Drivers List</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 1050px; margin: 2.5rem auto;">
+    
+    <!-- Top Driver Profile Summary Card -->
+    <div class="card" style="padding: 2rem; margin-bottom: 2rem; border-top: 6px solid var(--accent);">
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        
+        <div style="display: flex; gap: 1.25rem; align-items: center;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="avatar-img" style="width: 80px; height: 80px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+              <h1 id="adminDriverName" style="font-size: 1.8rem;">Rajesh Kumar</h1>
+              <span id="adminDriverStatusBadge" class="badge badge-warning">PENDING_VERIFICATION</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">
+              <i class="fa-solid fa-phone"></i> <span id="adminDriverPhone">+91 98765 43210</span> • <i class="fa-solid fa-location-dot"></i> <span id="adminDriverCity">Nagpur, Maharashtra</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Everything OK & Rejection Action Buttons -->
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn btn-danger" onclick="openRejectModal()"><i class="fa-solid fa-user-xmark"></i> Reject Driver</button>
+          <button class="btn btn-success btn-lg" onclick="handleVerifyAllDocuments('drv-101')"><i class="fa-solid fa-circle-check"></i> EVERYTHING OK - APPROVE ALL &amp; SEND MAIL</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Document Review & Audit Hub -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+      
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <div class="card" style="padding: 1.8rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Document Audit &amp; Verification Panel
+          </h3>
+
+          <!-- Document Item 1: Licence -->
+          <div class="doc-audit-card pending">
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.2rem;">1. Commercial Heavy Driving Licence</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Licence No: MH-31-2012-0088921 • Expiry: Nov 2032</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-warning doc-status-badge">Pending</span>
+              <button class="btn btn-outline-primary btn-sm" onclick="handleVerifyAllDocuments()"><i class="fa-solid fa-check"></i> Verify</button>
+            </div>
+          </div>
+
+          <!-- Document Item 2: Medical Certificate -->
+          <div class="doc-audit-card pending">
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.2rem;">2. Medical Fitness Certificate</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Issued: Jan 2026 • Vision &amp; Physical Fitness Passed</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-warning doc-status-badge">Pending</span>
+              <button class="btn btn-outline-primary btn-sm" onclick="handleVerifyAllDocuments()"><i class="fa-solid fa-check"></i> Verify</button>
+            </div>
+          </div>
+
+          <!-- Document Item 3: Police Clearance -->
+          <div class="doc-audit-card pending">
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.2rem;">3. Police Background Clearance</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Issued: Oct 2025 • Zero Criminal Record Record</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="badge badge-warning doc-status-badge">Pending</span>
+              <button class="btn btn-outline-primary btn-sm" onclick="handleVerifyAllDocuments()"><i class="fa-solid fa-check"></i> Verify</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column Sidebar -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="card">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Driver Overview</h3>
+          <ul style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+            <li style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Experience:</span>
+              <strong id="adminDriverExp">8 Years</strong>
+            </li>
+            <li style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Primary Route:</span>
+              <strong>Nagpur → Hyderabad</strong>
+            </li>
+            <li style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Score:</span>
+              <strong style="color: var(--accent);">96/100</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Rejection Modal -->
+  <div id="rejectModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('rejectModal')"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Reject Driver / Document</h3>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">Select or specify the exact reason for rejecting this profile. An automated rejection email will be dispatched to the driver.</p>
+
+      <div class="form-group">
+        <label class="form-label required">Rejection Reason</label>
+        <select id="rejectReasonSelect" class="form-control">
+          <option value="Driving Licence image unclear">Driving Licence image unclear</option>
+          <option value="Document expired or invalid">Document expired or invalid</option>
+          <option value="Information mismatch on profile">Information mismatch on profile</option>
+          <option value="Experience requirement not met">Experience requirement not met</option>
+          <option value="Other">Other Custom Reason</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Custom Reason Details</label>
+        <input type="text" id="customRejectReason" class="form-control" placeholder="Specify custom rejection reason...">
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+        <button class="btn btn-outline btn-block" onclick="closeModal('rejectModal')">Cancel</button>
+        <button class="btn btn-danger btn-block" onclick="handleConfirmRejection()"><i class="fa-solid fa-paper-plane"></i> Confirm Rejection &amp; Send Mail</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../../../../../../../../../../../js/data.js"></script>
+  <script src="../../../../../../../../../../../../js/api.js"></script>
+  <script src="../../../../../../../../../../../../js/app.js"></script>
+  <script src="../../../../../../../../../../../../js/admin.js"></script>
+</body>
+</html>

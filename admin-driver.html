@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Driver Management | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span> <span class="badge badge-info" style="font-size:0.7rem;">ADMIN PANEL</span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="admin-dashboard.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-arrow-left"></i> Admin Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-menu">
+        <span class="admin-sidebar-label">Admin Management</span>
+        <a href="admin-dashboard.html" class="admin-sidebar-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-drivers.html" class="admin-sidebar-item active"><i class="fa-solid fa-users"></i> Drivers</a>
+        <a href="admin-documents.html" class="admin-sidebar-item"><i class="fa-solid fa-shield-halved"></i> Documents</a>
+        <a href="admin-notifications.html" class="admin-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+        <a href="admin-settings.html" class="admin-sidebar-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="dashboard-content">
+      <div class="dashboard-header">
+        <div class="dashboard-title">
+          <h1>Driver Verification Management</h1>
+          <p>Review registered drivers, audit uploaded licences &amp; certificates, and send verification/rejection emails.</p>
+        </div>
+      </div>
+
+      <!-- Driver Table Card -->
+      <div class="card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Driver</th>
+                <th>City &amp; State</th>
+                <th>Experience</th>
+                <th>Licence Number</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="avatar-img" style="width: 44px; height: 44px;">
+                    <div>
+                      <strong style="color: var(--primary);">Rajesh Kumar</strong>
+                      <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">+91 98765 43210</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Nagpur, MH</td>
+                <td>8 Years</td>
+                <td>MH-31-2012-0088921</td>
+                <td><span id="adminDriverStatusBadge" class="badge badge-warning">PENDING_VERIFICATION</span></td>
+                <td>
+                  <a href="admin-driver-details.html?id=drv-101" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> Audit &amp; Verify</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" class="avatar-img" style="width: 44px; height: 44px;">
+                    <div>
+                      <strong style="color: var(--primary);">Suresh Patil</strong>
+                      <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">+91 98220 11223</span>
+                    </div>
+                  </div>
+                </td>
+                <td>Pune, MH</td>
+                <td>12 Years</td>
+                <td>MH-12-2010-0044120</td>
+                <td><span class="badge badge-verified"><i class="fa-solid fa-check"></i> VERIFIED</span></td>
+                <td>
+                  <a href="admin-driver-details.html?id=drv-102" class="btn btn-outline btn-sm">View Profile</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

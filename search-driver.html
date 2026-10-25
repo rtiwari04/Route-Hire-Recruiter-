@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Drivers | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="search-driver.html" class="nav-link active">Find Drivers</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="operator-dashboard.html" class="btn btn-primary">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding: 2.5rem 0;">
+    <div class="container">
+      
+      <!-- Top Search Bar -->
+      <div class="card" style="padding: 1.5rem; margin-bottom: 2rem; border-radius: var(--radius-md);">
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="flex-grow: 1; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);"></i>
+            <input type="text" id="searchInput" class="form-control" style="padding-left: 2.5rem;" placeholder="Search by route (e.g. Nagpur to Hyderabad), driver name, or city...">
+          </div>
+
+          <div style="width: 200px;">
+            <select id="sortSelect" class="form-control">
+              <option value="rating">Sort: Top Rated</option>
+              <option value="experience">Sort: Most Experience</option>
+              <option value="score">Sort: Highest Driver Score</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid with Filters & Results -->
+      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem;">
+        
+        <!-- Filters Sidebar -->
+        <aside class="card" style="height: fit-content; padding: 1.5rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.75rem;">
+            <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-sliders" style="color: var(--accent);"></i> Filters</h3>
+            <button type="button" class="btn btn-outline btn-sm" onclick="location.reload();">Reset</button>
+          </div>
+
+          <!-- City Filter -->
+          <div class="form-group">
+            <label class="form-label">Location / City</label>
+            <select id="cityFilter" class="form-control">
+              <option value="">All Cities</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Delhi">Delhi NCR</option>
+              <option value="Bangalore">Bangalore</option>
+            </select>
+          </div>
+
+          <!-- Vehicle Filter -->
+          <div class="form-group">
+            <label class="form-label">Vehicle Type</label>
+            <select id="vehicleFilter" class="form-control">
+              <option value="">All Vehicles</option>
+              <option value="Volvo 9400">Volvo 9400</option>
+              <option value="Scania Metrolink">Scania Metrolink</option>
+              <option value="BharatBenz Sleeper">BharatBenz Sleeper</option>
+              <option value="Ashok Leyland">Ashok Leyland</option>
+              <option value="Mini Bus">Mini Bus</option>
+            </select>
+          </div>
+
+          <!-- Minimum Experience -->
+          <div class="form-group">
+            <label class="form-label">Min. Experience (Years)</label>
+            <select id="expFilter" class="form-control">
+              <option value="0">Any Experience</option>
+              <option value="5">5+ Years</option>
+              <option value="8">8+ Years</option>
+              <option value="10">10+ Years</option>
+            </select>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="form-group">
+            <label class="form-label">Availability</label>
+            <select id="availabilityFilter" class="form-control">
+              <option value="">All Statuses</option>
+              <option value="Available">Available Immediately</option>
+              <option value="Available Soon">Available Soon</option>
+            </select>
+          </div>
+
+          <!-- Verified Checkbox -->
+          <div class="form-group">
+            <div class="checkbox-pill">
+              <input type="checkbox" id="verifiedFilter">
+              <label for="verifiedFilter"><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Verified Profiles Only</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Driver Cards Results Grid -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Showing <strong id="totalCount" style="color: var(--primary);">8</strong> verified drivers matching your search</p>
+          </div>
+
+          <div id="driverResultsContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <!-- JS populated dynamic driver cards -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Send Job Offer Modal -->
+  <div id="offerModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('offerModal')"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send Demo Job Offer</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Recipient: <strong id="targetDriverName" style="color: var(--primary);">Driver Name</strong></p>
+
+      <form onsubmit="event.preventDefault(); closeModal('offerModal'); showToast('Demo Job Offer sent successfully!', 'success');">
+        <div class="form-group">
+          <label class="form-label required">Select Route</label>
+          <input type="text" class="form-control" value="Nagpur → Hyderabad" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Offered Monthly Salary (₹)</label>
+          <input type="text" class="form-control" value="₹40,000 / month + Allowance" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Joining Date</label>
+          <input type="date" class="form-control" value="2026-08-25">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Offer Note</label>
+          <textarea class="form-control" placeholder="Add specific requirements or route terms..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-paper-plane"></i> Send Job Offer Now</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

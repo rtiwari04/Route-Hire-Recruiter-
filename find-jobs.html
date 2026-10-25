@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Driver Opportunities | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="find-jobs.html" class="nav-link active">Find Opportunities</a></li>
+        <li><a href="driver-dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="Frontend\HTML\public\opratorpage\profile.html" class="btn btn-primary">My Profile</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding: 2.5rem 0;">
+    <div class="container">
+      
+      <!-- Top Search Bar -->
+      <div class="card" style="padding: 1.5rem; margin-bottom: 2rem; border-radius: var(--radius-md);">
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="flex-grow: 1; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);"></i>
+            <input type="text" id="searchJobInput" class="form-control" style="padding-left: 2.5rem;" placeholder="Search route, city or travel operator (e.g., Laxmi Holidays, Nagpur)...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Results Grid -->
+      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem;">
+        
+        <!-- Filters Sidebar -->
+        <aside class="card" style="height: fit-content; padding: 1.5rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.75rem;">
+            <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-sliders" style="color: var(--accent);"></i> Filters</h3>
+            <button type="button" class="btn btn-outline btn-sm" onclick="location.reload();">Reset</button>
+          </div>
+
+          <!-- Location Filter -->
+          <div class="form-group">
+            <label class="form-label">Location / Hub</label>
+            <select id="locationFilter" class="form-control">
+              <option value="">All Locations</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi NCR</option>
+            </select>
+          </div>
+
+          <!-- Vehicle Filter -->
+          <div class="form-group">
+            <label class="form-label">Vehicle Experience</label>
+            <select id="vehicleFilter" class="form-control">
+              <option value="">All Vehicles</option>
+              <option value="Volvo">Volvo</option>
+              <option value="Scania">Scania</option>
+              <option value="Sleeper">Sleeper Bus</option>
+              <option value="BharatBenz">BharatBenz</option>
+            </select>
+          </div>
+
+          <!-- Experience Filter -->
+          <div class="form-group">
+            <label class="form-label">Max Required Experience</label>
+            <select id="expFilter" class="form-control">
+              <option value="0">Any Experience</option>
+              <option value="3">Up to 3 Years</option>
+              <option value="5">Up to 5 Years</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- Job Cards Results -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Showing <strong id="jobsCount" style="color: var(--primary);">6</strong> recruitment opportunities</p>
+          </div>
+
+          <div id="jobsContainer">
+            <!-- Dynamically populated by js/jobs.js -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

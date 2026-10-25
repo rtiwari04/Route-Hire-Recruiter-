@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RouteHire | Commercial Driver Recruitment & Staffing Platform</title>
+  <meta name="description" content="RouteHire connects professional commercial bus drivers with travel operators through a structured recruitment platform across India.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="Frontend\HTML\public\DriverPage\Find-jobs.html" class="nav-link">Find Opportunities</a></li>
+        <li><a href="Frontend\HTML\public\DriverPage\search-driver.html" class="nav-link">Find Drivers</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-outline">Login</a>
+        
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle">
+            Register <i class="fa-solid fa-chevron-down" style="font-size:0.75rem;"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="driver-register.html" class="dropdown-item"><i class="fa-solid fa-id-card" style="color:var(--accent);"></i> As Driver</a>
+            <a href="Frontend\HTML\public\opratorpage\oprator-register.html" class="dropdown-item"><i class="fa-solid fa-building" style="color:var(--secondary);"></i> As Operator</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section" style="padding: 6rem 0 4rem 0; background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-subtle) 100%);">
+    <div class="container">
+      <div class="hero-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3.5rem; align-items: center;">
+        <div>
+          <span class="badge badge-info" style="margin-bottom: 1.25rem;"><i class="fa-solid fa-handshake"></i> Commercial Driver Recruitment &amp; Staffing</span>
+          <h1 style="font-size: 3.2rem; margin-bottom: 1.25rem; letter-spacing: -1px; line-height: 1.15;">
+            The Right Driver. The Right Route. <span style="color: var(--accent);">The Right Opportunity.</span>
+          </h1>
+          <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.2rem; line-height: 1.7;">
+            RouteHire connects professional commercial drivers with travel operators through a simple, structured recruitment platform.
+          </p>
+          <div class="hero-actions" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="Frontend\HTML\public\Frontend\HTML\public\DriverPage\Find-jobs.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-briefcase"></i> Find Driver Opportunities</a>
+            <a href="post-requirement.html" class="btn btn-outline-primary btn-lg"><i class="fa-solid fa-user-plus"></i> Hire Drivers</a>
+          </div>
+        </div>
+
+        <!-- Featured Job Card -->
+        <div style="position: relative;">
+          <div class="card" style="padding: 2rem; background: var(--card-bg); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border-top: 5px solid var(--accent);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=150&q=80" alt="Laxmi Holidays" class="avatar-img" style="width: 48px; height: 48px;">
+                <div>
+                  <h3 style="font-size: 1.1rem;">Laxmi Holidays Travels</h3>
+                  <span class="badge badge-verified" style="font-size: 0.7rem;"><i class="fa-solid fa-circle-check"></i> Verified Operator</span>
+                </div>
+              </div>
+              <span class="badge badge-verified"><i class="fa-solid fa-bolt"></i> 96% Match</span>
+            </div>
+
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary);">Hiring: 10 Professional Bus Drivers</h4>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: var(--bg-subtle); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div>
+                <span style="color: var(--text-light); display: block; font-size: 0.75rem;">LOCATION</span>
+                <strong>Nagpur, MH</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-light); display: block; font-size: 0.75rem;">SALARY / CTC</span>
+                <strong style="color: var(--success);">₹30,000 – ₹35,000</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-light); display: block; margin-bottom: 0.3rem;">ROUTES</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                <span style="background: var(--accent-light); color: var(--accent); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 600;">Nagpur → Mumbai</span>
+                <span style="background: var(--accent-light); color: var(--accent); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 600;">Nagpur → Pune</span>
+              </div>
+            </div>
+
+            <a href="Frontend\HTML\public\Frontend\HTML\public\DriverPage\job-detail.html" class="btn btn-primary btn-block btn-sm">View Requirement Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Driver Requirements Feed (Homepage) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Active Hiring Needs</span>
+        <h2 class="section-title">Latest Driver Requirements</h2>
+        <p class="section-description">Explore active recruitment positions from verified travel companies across India.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        
+        <!-- Job Card 1 -->
+        <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=150&q=80" alt="Laxmi Holidays" class="avatar-img" style="width: 44px; height: 44px;">
+                <div>
+                  <h4 style="font-size: 1.05rem;">Laxmi Holidays Travels</h4>
+                  <span class="badge badge-verified" style="font-size: 0.7rem;">Verified</span>
+                </div>
+              </div>
+              <span class="badge badge-info">10 Vacancies</span>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--primary);">Professional Bus Driver</h3>
+
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <div><i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Nagpur, Maharashtra</div>
+              <div><i class="fa-solid fa-indian-rupee-sign" style="color: var(--success);"></i> ₹30,000 – ₹35,000 / Month</div>
+              <div><i class="fa-solid fa-bus" style="color: var(--secondary);"></i> Volvo B11R / AC Sleeper</div>
+            </div>
+          </div>
+
+          <a href="Frontend\HTML\public\DriverPage\job-detail.html" class="btn btn-outline-primary btn-block btn-sm">View Requirement</a>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=150&q=80" alt="Apoorva Travels" class="avatar-img" style="width: 44px; height: 44px;">
+                <div>
+                  <h4 style="font-size: 1.05rem;">ABC Travels &amp; Express</h4>
+                  <span class="badge badge-verified" style="font-size: 0.7rem;">Verified</span>
+                </div>
+              </div>
+              <span class="badge badge-info">5 Vacancies</span>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--primary);">Senior Sleeper Bus Pilot</h3>
+
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <div><i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Pune, Maharashtra</div>
+              <div><i class="fa-solid fa-indian-rupee-sign" style="color: var(--success);"></i> ₹28,000 – ₹32,000 / Month</div>
+              <div><i class="fa-solid fa-bus" style="color: var(--secondary);"></i> Scania Metrolink</div>
+            </div>
+          </div>
+
+          <a href="Frontend\HTML\public\Frontend\HTML\public\DriverPage\job-detail.html" class="btn btn-outline-primary btn-block btn-sm">View Requirement</a>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="card card-hover" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="XYZ Bus Services" class="avatar-img" style="width: 44px; height: 44px;">
+                <div>
+                  <h4 style="font-size: 1.05rem;">XYZ Bus Services</h4>
+                  <span class="badge badge-verified" style="font-size: 0.7rem;">Verified</span>
+                </div>
+              </div>
+              <span class="badge badge-info">8 Vacancies</span>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--primary);">Multi-Axle Volvo Master Captain</h3>
+
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <div><i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Mumbai, Maharashtra</div>
+              <div><i class="fa-solid fa-indian-rupee-sign" style="color: var(--success);"></i> ₹35,000 – ₹42,000 / Month</div>
+              <div><i class="fa-solid fa-bus" style="color: var(--secondary);"></i> Volvo 9400 Multi-Axle</div>
+            </div>
+          </div>
+
+          <a href="Frontend\HTML\public\Frontend\HTML\public\DriverPage\job-detail.html" class="btn btn-outline-primary btn-block btn-sm">View Requirement</a>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="Frontend\HTML\public\Frontend\HTML\public\Frontend\HTML\public\DriverPage\Find-jobs.html" class="btn btn-primary btn-lg">Browse All Driver Opportunities →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RouteHire Visual Recruitment Model -->
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">End-to-End Workflow</span>
+        <h2 class="section-title">How RouteHire Connects Drivers &amp; Operators</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div class="card" style="padding: 1.8rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem auto; font-weight: 800;">1</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Operator Post</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Operator posts driver requirement with routes and CTC.</p>
+        </div>
+
+        <div class="card" style="padding: 1.8rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem auto; font-weight: 800;">2</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">RouteHire Matching</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Platform displays requirements to suitable drivers.</p>
+        </div>
+
+        <div class="card" style="padding: 1.8rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem auto; font-weight: 800;">3</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Driver Application</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Driver applies via RouteHire recruitment form.</p>
+        </div>
+
+        <div class="card" style="padding: 1.8rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 1rem auto; font-weight: 800;">4</div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Screen &amp; Join</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">RouteHire screens drivers; operator selects &amp; deploys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 RouteHire Technologies. Commercial Driver Recruitment Platform.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="../../../../../../../js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Forms & Registration Wizard Stylesheet
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--danger);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+}
+
+.form-control::placeholder {
+  color: var(--text-light);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%64748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Checkbox & Radio Custom Inputs */
+.checkbox-group, .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-pill, .radio-pill {
+  position: relative;
+}
+
+.checkbox-pill input, .radio-pill input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-pill label, .radio-pill label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.checkbox-pill input:checked + label,
+.radio-pill input:checked + label {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Multi-Step Wizard Indicator */
+.wizard-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.wizard-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-border);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.wizard-progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: width var(--transition-normal);
+}
+
+.step-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-light);
+  padding: 0 0.5rem;
+}
+
+.step-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all var(--transition-normal);
+}
+
+.step-item.active .step-circle {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+.step-item.completed .step-circle {
+  border-color: var(--success);
+  background: var(--success);
+  color: #FFFFFF;
+}
+
+.step-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-item.active .step-title {
+  color: var(--accent);
+}
+
+/* Document Upload Box */
+.upload-zone {
+  border: 2px dashed var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.upload-zone:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.upload-icon {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.upload-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.upload-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Dynamic Route Rows */
+.route-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 40px;
+  gap: 1rem;
+  align-items: center;
+  background: var(--bg-subtle);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.8rem;
+}
+
+.btn-remove-row {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

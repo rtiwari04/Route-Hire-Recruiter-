@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Settings | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span> <span class="badge badge-info" style="font-size:0.7rem;">ADMIN PANEL</span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="admin-dashboard.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-arrow-left"></i> Admin Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-menu">
+        <span class="admin-sidebar-label">Admin Management</span>
+        <a href="admin-dashboard.html" class="admin-sidebar-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-drivers.html" class="admin-sidebar-item"><i class="fa-solid fa-users"></i> Drivers</a>
+        <a href="admin-documents.html" class="admin-sidebar-item"><i class="fa-solid fa-shield-halved"></i> Documents</a>
+        <a href="admin-notifications.html" class="admin-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+        <a href="admin-settings.html" class="admin-sidebar-item active"><i class="fa-solid fa-gear"></i> Settings</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+      <div class="dashboard-header">
+        <div class="dashboard-title">
+          <h1>Admin Configuration &amp; Email Engine Settings</h1>
+          <p>Configure Nodemailer SMTP server settings, verification rules, and admin credentials.</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 2rem; max-width: 700px;">
+        <form onsubmit="event.preventDefault(); showToast('Admin settings saved.', 'success');">
+          <div class="form-group">
+            <label class="form-label">System Email Sender (Nodemailer From)</label>
+            <input type="text" class="form-control" value="RouteHire Recruitment Team <notifications@routehire.com>">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Automated Email Triggers</label>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+              <label style="display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" checked> Send Approval Email on 'Everything OK'</label>
+              <label style="display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" checked> Send Rejection Email with Reason</label>
+              <label style="display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" checked> Send Document Resubmission Request Email</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 1rem;"><i class="fa-solid fa-floppy-disk"></i> Save Admin Configuration</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

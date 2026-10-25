@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Driver Requirement | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="operator-dashboard.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-arrow-left"></i> Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 850px; margin: 3rem auto;">
+    <div class="card" style="padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+      
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="font-size: 2rem; margin-bottom: 0.4rem;">Post New Driver Requirement</h2>
+        <p style="color: var(--text-muted);">Publish hiring needs to connect with suitable commercial driver candidates.</p>
+      </div>
+
+      <form id="postRequirementForm">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label required">Requirement Title</label>
+            <input type="text" id="reqTitle" class="form-control" value="Professional Bus Driver" placeholder="e.g. Professional Bus Driver" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Number of Vacancies</label>
+            <input type="number" id="reqVacancies" class="form-control" value="10" min="1" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label required">Operating Hub / Location</label>
+            <input type="text" id="reqLocation" class="form-control" value="Nagpur, Maharashtra" placeholder="e.g. Nagpur, Maharashtra" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Covered Routes (Comma Separated)</label>
+            <input type="text" id="reqRoutes" class="form-control" value="Nagpur → Mumbai, Nagpur → Pune, Nagpur → Hyderabad" placeholder="e.g. Nagpur → Mumbai, Nagpur → Pune" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label required">Min. Monthly Salary (₹)</label>
+            <input type="number" id="reqSalaryMin" class="form-control" value="30000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Max. Monthly Salary (₹)</label>
+            <input type="number" id="reqSalaryMax" class="form-control" value="35000" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label required">Min. Experience Required (Years)</label>
+            <input type="number" id="reqExp" class="form-control" value="3" min="1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Vehicle Type</label>
+            <input type="text" class="form-control" value="Volvo B11R / AC Sleeper Bus">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Requirement Description</label>
+          <textarea id="reqDescription" class="form-control" placeholder="Describe the job duties, schedules, and route expectations...">Hiring 10 professional bus drivers for long-distance interstate routes.</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+          <i class="fa-solid fa-paper-plane"></i> POST REQUIREMENT NOW
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="postSuccessModal" class="modal-overlay">
+    <div class="modal-card" style="text-align: center;">
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.25rem auto;">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Requirement Posted Successfully!</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1.8rem;">Your recruitment post is now active and visible on RouteHire driver feeds.</p>
+      <a href="find-jobs.html" class="btn btn-primary btn-block">View on Jobs Feed</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="../../../opratorpage/js/operator.js"></script>
+</body>
+</html>

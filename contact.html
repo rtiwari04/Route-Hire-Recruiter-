@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="search-driver.html" class="nav-link">Find Drivers</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-outline">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">We'd Love to Hear From You</h2>
+        <p class="section-description">Have questions about driver registration or travel operator fleet integration?</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem;">
+        
+        <!-- Contact Info Sidebar -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="card" style="padding: 1.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem;">Headquarters</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">Nagpur Transport Hub, Maharashtra, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem;">Support Email</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">support@routehire.demo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--warning-bg); color: var(--warning); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem;">Helpline</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">+91 1800 123 4567 (Toll Free)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card" style="padding: 2.5rem;">
+          <form onsubmit="event.preventDefault(); showToast('Thank you! Your message has been received.', 'success'); this.reset();">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label required">Your Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Ramesh Singh" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label required">Email Address</label>
+                <input type="email" class="form-control" placeholder="ramesh@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="10-digit mobile">
+              </div>
+              <div class="form-group">
+                <label class="form-label required">Subject</label>
+                <input type="text" class="form-control" placeholder="Driver Profile / Operator Onboarding" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required">Message</label>
+              <textarea class="form-control" placeholder="Type your message or inquiry here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 RouteHire Technologies. Demo Frontend Prototype.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | RouteHire</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <i class="fa-solid fa-bus-simple"></i> Route<span>Hire</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="driver-dashboard.html" class="btn btn-primary">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width: 800px; margin: 3rem auto;">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem;">Account &amp; Preference Settings</h1>
+      <p style="color: var(--text-muted);">Manage your profile visibility, notification preferences, and application theme.</p>
+    </div>
+
+    <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
+      <form onsubmit="event.preventDefault(); showToast('Settings saved successfully!', 'success');">
+        
+        <!-- Appearance Settings -->
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+          <i class="fa-solid fa-palette" style="color: var(--accent);"></i> Appearance &amp; Display
+        </h3>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.8rem;">
+          <div>
+            <h4 style="font-size: 1rem;">Dark Mode Theme</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Switch between dark and light theme palettes.</p>
+          </div>
+          <button type="button" class="btn btn-outline theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i> Toggle Dark Mode</button>
+        </div>
+
+        <!-- Privacy & Visibility -->
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+          <i class="fa-solid fa-eye" style="color: var(--accent);"></i> Profile Visibility &amp; Status
+        </h3>
+
+        <div class="form-group">
+          <label class="form-label">Current Driver Availability</label>
+          <select class="form-control">
+            <option value="Available" selected>Available Immediately</option>
+            <option value="Currently Working">Currently Working / On Route</option>
+            <option value="Available Soon">Available Next Week</option>
+            <option value="Not Available">Not Looking for Offers</option>
+          </select>
+        </div>
+
+        <!-- Notifications Settings -->
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; margin-top: 2rem;">
+          <i class="fa-solid fa-bell" style="color: var(--accent);"></i> Notification Channels
+        </h3>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+          <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+            <input type="checkbox" checked style="width: 18px; height: 18px;">
+            <div>
+              <strong>Job Offer SMS Alerts</strong>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Receive instant SMS when a travel operator sends you a job offer.</p>
+            </div>
+          </label>
+
+          <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+            <input type="checkbox" checked style="width: 18px; height: 18px;">
+            <div>
+              <strong>WhatsApp Route Notifications</strong>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Get notified on WhatsApp when new operators post requirements on your top routes.</p>
+            </div>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg"><i class="fa-solid fa-floppy-disk"></i> Save Settings</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
