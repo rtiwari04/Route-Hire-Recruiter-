@@ -42,19 +42,19 @@ function initMobileBottomNav() {
     const bottomNav = document.createElement('nav');
     bottomNav.className = 'mobile-bottom-nav';
     bottomNav.innerHTML = `
-      <a href="DriverPage/Driver-Dashboard.html" class="bottom-nav-item ${window.location.pathname.includes('Driver-Dashboard') ? 'active' : ''}">
+      <a href="/driver-dashboard.html" class="bottom-nav-item ${window.location.pathname.includes('driver-dashboard') ? 'active' : ''}">
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
       </a>
-      <a href="DriverPage/Find-jobs.html" class="bottom-nav-item ${window.location.pathname.includes('find-jobs') ? 'active' : ''}">
+      <a href="/find-jobs.html" class="bottom-nav-item ${window.location.pathname.includes('find-jobs') ? 'active' : ''}">
         <i class="fa-solid fa-briefcase"></i>
         <span>Jobs</span>
       </a>
-      <a href="DriverPage/Application.html" class="bottom-nav-item ${window.location.pathname.includes('applications') ? 'active' : ''}">
+      <a href="/DriverPage/Application.html" class="bottom-nav-item ${window.location.pathname.includes('applications') ? 'active' : ''}">
         <i class="fa-solid fa-file-lines"></i>
         <span>Applications</span>
       </a>
-      <a href="DriverPage/Job-page.html" class="bottom-nav-item ${window.location.pathname.includes('job-offers') ? 'active' : ''}">
+      <a href="/DriverPage/Job-page.html" class="bottom-nav-item ${window.location.pathname.includes('job-offers') ? 'active' : ''}">
         <i class="fa-solid fa-envelope"></i>
         <span>Offers</span>
       </a>

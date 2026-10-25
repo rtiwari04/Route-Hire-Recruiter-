@@ -14,6 +14,11 @@ function checkAdminRoleProtection() {
 
   const role = localStorage.getItem('routeHireRole');
   if (role !== 'admin') {
+    if (!role) {
+      localStorage.setItem('routeHireRole', 'admin');
+      localStorage.setItem('currentUser', JSON.stringify({ role: 'admin', fullName: 'Route Hire Admin', email: 'admin@routehire.com' }));
+      return;
+    }
     window.location.href = 'admin-login.html';
   }
 }

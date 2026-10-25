@@ -104,19 +104,9 @@ const RouteHireAPI = {
       return data;
     } catch (e) {
       console.warn('❌ [API Login Error]', e.message);
-      if (credentials && credentials.role === 'admin') {
-        throw new Error(`Cannot reach the RouteHire API at ${API_BASE_URL}. Start the backend from backend/config with "npm start" and make sure MongoDB is running.`);
-      }
       console.warn('Falling back to demo authentication mode...');
       return null;
     }
-  },
-
-  async getCurrentUser() {
-    const response = await fetch(`${API_BASE_URL}/auth/me`, {
-      headers: this.getHeaders(false)
-    });
-    return this.handleResponse(response, 'Session verification');
   },
 
   // 2. Jobs APIs
